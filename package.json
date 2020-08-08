@@ -1,0 +1,22 @@
+{
+  "name": "hssp-server-koa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KMU-WINK/hssp-server-koa.git",
+  "author": "KMU-WINK",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node src",
+    "start:dev": "nodemon --watch src/ --exec babel-node src/index.js"
+  },
+  "dependencies": {
+    "koa": "^2.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "babel-eslint": "^10.1.0",
+    "nodemon": "^2.0.4"
+  }
+}
