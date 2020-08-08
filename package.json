@@ -10,7 +10,12 @@
     "start:dev": "nodemon --watch src/ --exec babel-node src/index.js"
   },
   "dependencies": {
-    "koa": "^2.13.0"
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^9.1.0",
+    "moment": "^2.27.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
