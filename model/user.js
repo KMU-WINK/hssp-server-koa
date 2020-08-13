@@ -20,9 +20,8 @@ CREATE TABLE `hssp`.`user` (
  * @returns {boolean} 성공 여부
  */
 export async function createUser(ctx, args){
-    ctx.db.connect();
-    const queryResult = await ctx.db.promise().query(
-        "INSERT INTO `hssp`.`user` (`phone`, `password`, `name`, `birth_date`, `join_date`, `is_active`, `is_admin`)" +
+    const queryResult = await ctx.db.query(
+        "INSERT INTO `user` (`phone`, `password`, `name`, `birth_date`, `join_date`, `is_active`, `is_admin`)" +
         "VALUES (?, ?, ?, ?, ?, ?, ?);",
         [
             args.phone,
@@ -32,6 +31,14 @@ export async function createUser(ctx, args){
             args.joinDate,
             args.isActive,
             args.isAdmin,
-        ]);
+        ], function(err, results, field){
+            if(err) {
+                ctx.status = 500;
+            }
+        });
     console.log(queryResult);
+}
+
+export async function readUser(ctx, args){
+
 }

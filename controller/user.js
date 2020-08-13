@@ -19,3 +19,7 @@ export async function signUp(ctx, args){
         isAdmin: false,
     });
 }
+
+export async function getUserInformation(ctx, args){
+
+}

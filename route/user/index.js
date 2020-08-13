@@ -5,11 +5,15 @@ export const user = new Router();
 
 // user
 
+// /user/1
+
+
 const actions = [
     {
         method: "get",
-        path: "/",
+        path: "/:id",
         exec: async (ctx, next) => {
+            ctx.request
             ctx.body = 'GET ' + ctx.request.path;
         }
     },
@@ -23,7 +27,9 @@ const actions = [
                 name: ctx.request.body['name'],
                 birthDate: moment(ctx.request.body['birthDate'], "YYYY-MM-DD").unix(),
             });
+            console.log("!");
             ctx.body = {"test":"test"};
+            next();
         }
     },
 ]
